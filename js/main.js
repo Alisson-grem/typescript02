@@ -5,13 +5,13 @@ var empresa;
     const campoNome = document.getElementById("campoNome");
     const campoAno = document.getElementById("campoAno");
     const campoCodigo = document.getElementById("campoCodigo");
-    const btnDeposito = document.getElementById("deposito");
-    const campoDeposito = document.getElementById("campoDeposito");
-    let p;
+    const campoDeposito = document.getElementById("btnDeposito");
     const campoCompra = document.getElementById("campoCompra");
     const btnComprar = document.getElementById("comprar");
+    const btnDeposito = document.getElementById("deposito");
+    let p;
     calc.addEventListener("click", () => {
-        let p = new empresa.Pessoa();
+        p = new empresa.Cliente(parseInt(campoCodigo.value));
         p.nome = campoNome.value;
         p.anoNasc = parseInt(campoAno.value);
         document.getElementById("nome").textContent = p.nome;

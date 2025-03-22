@@ -6,17 +6,16 @@ namespace empresa{
 
     const campoCodigo = document.getElementById("campoCodigo") as HTMLInputElement;
 
-    const btnDeposito = document.getElementById("deposito") as HTMLButtonElement;
+    const campoDeposito = document.getElementById("btnDeposito") as HTMLInputElement;
+    const campoCompra = document.getElementById("campoCompra") as HTMLButtonElement;
 
-    const campoDeposito = document.getElementById("campoDeposito") as HTMLInputElement;
+    const btnComprar = document.getElementById("comprar") as HTMLButtonElement;
+    const btnDeposito = document.getElementById("deposito") as HTMLButtonElement;
 
     let p: Cliente;
 
-    const campoCompra = document.getElementById("campoCompra") as HTMLButtonElement;
-    const btnComprar = document.getElementById("comprar") as HTMLButtonElement;
-
     calc.addEventListener("click", ()=>{
-        let p = new Pessoa();
+        p = new Cliente(parseInt(campoCodigo.value));
         p.nome = campoNome.value;
         p.anoNasc = parseInt(campoAno.value);
 
@@ -41,8 +40,5 @@ namespace empresa{
 
         document.getElementById("saldo").textContent = p.saldo.toString();
     });
-
-    
-
 
 }
